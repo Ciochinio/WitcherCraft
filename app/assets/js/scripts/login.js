@@ -173,12 +173,12 @@ function resolveError(err){
         if(err.error != null){
             if(err.error === 'ForbiddenOperationException'){
                 if(err.errorMessage != null){
-                    if(err.errorMessage === 'Invalid credentials. Invalid username or password.'){
+                    if(err.errorMessage === 'Nieprawidłowe dane uwierzytelniania. Nieprawidłowa nazwa użytkownika lub hasło.'){
                         return {
                             title: Lang.queryJS('login.error.invalidCredentials.title'),
                             desc: Lang.queryJS('login.error.invalidCredentials.desc')
                         }
-                    } else if(err.errorMessage === 'Invalid credentials.'){
+                    } else if(err.errorMessage === 'Nieprawidłowe dane uwierzytelniania.'){
                         return {
                             title: Lang.queryJS('login.error.rateLimit.title'),
                             desc: Lang.queryJS('login.error.rateLimit.desc')
@@ -294,7 +294,7 @@ loginButton.addEventListener('click', () => {
             toggleOverlay(false)
         })
         toggleOverlay(true)
-        loggerLogin.log('Error while logging in.', err)
+        loggerLogin.log('Błąd podczas logowania.', err)
     })
 
 })

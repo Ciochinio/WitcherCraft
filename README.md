@@ -1,4 +1,4 @@
-<p align="center"><img src="./app/assets/images/mcgeralt.png" width="150px" height="150px" alt="aventium softworks"></p>
+<p align="center"><img src="./app/assets/images/mcgeralt.png" width="1920px" alt="aventium softworks"></p>
 
 <h1 align="center">WitcherCraft</h1>
 

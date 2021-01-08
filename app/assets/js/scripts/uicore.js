@@ -26,9 +26,9 @@ window.eval = global.eval = function () {
 
 // Display warning when devtools window is opened.
 remote.getCurrentWebContents().on('devtools-opened', () => {
-    console.log('%cThe console is dark and full of terrors.', 'color: white; -webkit-text-stroke: 4px #a02d2a; font-size: 60px; font-weight: bold')
-    console.log('%cIf you\'ve been told to paste something here, you\'re being scammed.', 'font-size: 16px')
-    console.log('%cUnless you know exactly what you\'re doing, close this window.', 'font-size: 16px')
+    console.log('%cTo miejsce nie jest w pełni bezpieczne.', 'color: white; -webkit-text-stroke: 4px #a02d2a; font-size: 60px; font-weight: bold')
+    console.log('%cJeśli ktoś kazał Ci coś tu wklejać prawdopodobnie zostałeś oszukany.', 'font-size: 16px')
+    console.log('%cJeśli nie jesteś pewny co robisz lepiej zamknij to oknienko.', 'font-size: 16px')
 })
 
 // Disable zoom, needed for darwin.
@@ -41,22 +41,22 @@ if(!isDev){
     ipcRenderer.on('autoUpdateNotification', (event, arg, info) => {
         switch(arg){
             case 'checking-for-update':
-                loggerAutoUpdater.log('Checking for update..')
-                settingsUpdateButtonStatus('Checking for Updates..', true)
+                loggerAutoUpdater.log('Sprawdzanie Aktualizacji..')
+                settingsUpdateButtonStatus('Sprawdzanie Aktualizacji..', true)
                 break
             case 'update-available':
-                loggerAutoUpdaterSuccess.log('New update available', info.version)
+                loggerAutoUpdaterSuccess.log('Nowa Aktualizacja Dostępna', info.version)
                 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `https://github.com/dscalzi/HeliosLauncher/releases/download/v${info.version}/helioslauncher-setup-${info.version}.dmg`
+                    info.darwindownload = `https://github.com/Chesvin1/FarfaniaLauncherLauncher/releases/download/v${info.version}/farfanialauncher-setup-${info.version}.dmg`
                     showUpdateUI(info)
                 }
                 
                 populateSettingsUpdateInformation(info)
                 break
             case 'update-downloaded':
-                loggerAutoUpdaterSuccess.log('Update ' + info.version + ' ready to be installed.')
-                settingsUpdateButtonStatus('Install Now', false, () => {
+                loggerAutoUpdaterSuccess.log('Aktualizacja ' + info.version + ' gotowa do instalacji.')
+                settingsUpdateButtonStatus('Instaluj teraz', false, () => {
                     if(!isDev){
                         ipcRenderer.send('autoUpdateAction', 'installUpdateNow')
                     }
@@ -64,8 +64,8 @@ if(!isDev){
                 showUpdateUI(info)
                 break
             case 'update-not-available':
-                loggerAutoUpdater.log('No new update found.')
-                settingsUpdateButtonStatus('Check for Updates')
+                loggerAutoUpdater.log('Brak Nowych Aktualizacji.')
+                settingsUpdateButtonStatus('Szukaj Aktualizacji')
                 break
             case 'ready':
                 updateCheckListener = setInterval(() => {
@@ -76,12 +76,12 @@ if(!isDev){
             case 'realerror':
                 if(info != null && info.code != null){
                     if(info.code === 'ERR_UPDATER_INVALID_RELEASE_FEED'){
-                        loggerAutoUpdater.log('No suitable releases found.')
+                        loggerAutoUpdater.log('Nie znaleziono pasujących wydań.')
                     } else if(info.code === 'ERR_XML_MISSED_ELEMENT'){
-                        loggerAutoUpdater.log('No releases found.')
+                        loggerAutoUpdater.log('Nie znaleziono wydań.')
                     } else {
-                        loggerAutoUpdater.error('Error during update check..', info)
-                        loggerAutoUpdater.debug('Error Code:', info.code)
+                        loggerAutoUpdater.error('Błąd podczas sprawdzania aktualizacji..', info)
+                        loggerAutoUpdater.debug('Kod Błędu:', info.code)
                     }
                 }
                 break
@@ -206,7 +206,7 @@ $(document).on('click', 'a[href^="http"]', function(event) {
  * DevTools, for example the chrome debugger in VS Code. 
  */
 document.addEventListener('keydown', function (e) {
-    if((e.key === 'I' || e.key === 'i') && e.ctrlKey && e.shiftKey){
+    if((e.key === 'I' || e.key === 'i') && e.ctrlKey){
         let window = remote.getCurrentWindow()
         window.toggleDevTools()
     }

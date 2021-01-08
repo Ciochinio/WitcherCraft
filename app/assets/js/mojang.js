@@ -19,25 +19,25 @@ const statuses = [
     {
         service: 'sessionserver.mojang.com',
         status: 'grey',
-        name: 'Multiplayer Session Service',
+        name: 'Serwis Sesji Wieloosobowej',
         essential: true
     },
     {
         service: 'authserver.mojang.com',
         status: 'grey',
-        name: 'Authentication Service',
+        name: 'Serwis Autoryzacji',
         essential: true
     },
     {
         service: 'textures.minecraft.net',
         status: 'grey',
-        name: 'Minecraft Skins',
+        name: 'Skiny Minecraft',
         essential: false
     },
     {
         service: 'api.mojang.com',
         status: 'grey',
-        name: 'Public API',
+        name: 'Publiczne API',
         essential: false
     },
     {
@@ -49,7 +49,7 @@ const statuses = [
     {
         service: 'account.mojang.com',
         status: 'grey',
-        name: 'Mojang Accounts Website',
+        name: 'Strona Kont Mojang',
         essential: false
     }
 ]
@@ -96,8 +96,8 @@ exports.status = function(){
             function(error, response, body){
 
                 if(error || response.statusCode !== 200){
-                    logger.warn('Unable to retrieve Mojang status.')
-                    logger.debug('Error while retrieving Mojang statuses:', error)
+                    logger.warn('Nie udało się pozyskać statusu Mojang.')
+                    logger.debug('Błąd podczas pozyskiwania statusu Mojang:', error)
                     //reject(error || response.statusCode)
                     for(let i=0; i<statuses.length; i++){
                         statuses[i].status = 'grey'
@@ -151,7 +151,7 @@ exports.authenticate = function(username, password, clientToken, requestUser = t
             },
             function(error, response, body){
                 if(error){
-                    logger.error('Error during authentication.', error)
+                    logger.error('Błąd podczas autoryzacji.', error)
                     reject(error)
                 } else {
                     if(response.statusCode === 200){
@@ -185,7 +185,7 @@ exports.validate = function(accessToken, clientToken){
             },
             function(error, response, body){
                 if(error){
-                    logger.error('Error during validation.', error)
+                    logger.error('Błąd podczas weryfikacji.', error)
                     reject(error)
                 } else {
                     if(response.statusCode === 403){
@@ -220,7 +220,7 @@ exports.invalidate = function(accessToken, clientToken){
             },
             function(error, response, body){
                 if(error){
-                    logger.error('Error during invalidation.', error)
+                    logger.error('Błąd podczas unieważniania.', error)
                     reject(error)
                 } else {
                     if(response.statusCode === 204){
@@ -257,7 +257,7 @@ exports.refresh = function(accessToken, clientToken, requestUser = true){
             },
             function(error, response, body){
                 if(error){
-                    logger.error('Error during refresh.', error)
+                    logger.error('Błąd podczas odświeżania.', error)
                     reject(error)
                 } else {
                     if(response.statusCode === 200){

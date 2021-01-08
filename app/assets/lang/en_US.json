@@ -1,48 +1,48 @@
 {
     "html": {
-        "avatarOverlay": "Edit"
+        "avatarOverlay": "Edytuj"
     },
     "js": {
         "login": {
             "error": {
-                "invalidValue": "* Invalid Value",
-                "requiredValue": "* Required",
+                "invalidValue": "* Nieprawidłowa wartość",
+                "requiredValue": "* Wymagane",
                 "userMigrated": {
-                    "title": "Error During Login:<br>Invalid Credentials",
-                    "desc": "You've attempted to login with a migrated account. Try again using the account email as the username."
+                    "title": "Błąd przy połączeniu:<br>Nieprawidłowe dane logowania.",
+                    "desc": "Próbowałeś się zalogować przy użyciu migrowanego konta. Proszę zalogować się używając maila."
                 },
                 "invalidCredentials": {
-                    "title": "Error During Login:<br>Invalid Credentials",
-                    "desc": "The email or password you've entered is incorrect. Please try again."
+                    "title": "Błąd przy połączeniu:<br>Nieprawidłowe dane logowania.",
+                    "desc": "Email lub hasło, które wpisałeś jest nieprawidłowe. Proszę spróbować ponownie."
                 },
                 "rateLimit": {
-                    "title": "Error During Login:<br>Too Many Attempts",
-                    "desc": "There have been too many login attempts with this account recently. Please try again later."
+                    "title": "Błąd przy połączeniu:<br>Zbyt wiele prób",
+                    "desc": "Zbyt wiele prób logowania .Spróbuj ponownie później."
                 },
                 "noInternet": {
-                    "title": "Error During Login:<br>No Internet Connection",
-                    "desc": "You must be connected to the internet in order to login. Please connect and try again."
+                    "title": "Błąd przy połączeniu:<br>Brak połączenia z internetem.",
+                    "desc": "Musisz mieć połączenie z internetem, żeby sie zalogować. Połącz się i spróbuj ponownie."
                 },
                 "authDown": {
-                    "title": "Error During Login:<br>Authentication Server Offline",
-                    "desc": "Mojang's authentication server is currently offline or unreachable. Please wait a bit and try again. You can check the status of the server on <a href=\"https://help.mojang.com/\">Mojang's help portal</a>."
+                    "title": "Błąd przy połączeniu:<br>Serwer uwierzytelniana jest wyłączony",
+                    "desc": "Serwer uwierzytelniania Mojang jest obecnie wyłączony lub niedostępny. Proszę poczekać chwile i spróbować ponownie. <a href=\"https://help.mojang.com/\">serwis pomocy Mojang</a>."
                 },
                 "notPaid": {
-                    "title": "Error During Login:<br>Game Not Purchased",
-                    "desc": "The account you are trying to login with has not purchased a copy of Minecraft.<br>You may purchase a copy on <a href=\"https://minecraft.net/\">Minecraft.net</a>"
+                    "title": "Błąd przy połączeniu:<br>Gra nie jest zakupiona.",
+                    "desc": "Konto, na które próbujesz się zalogować nie ma posiadanej kopii Minecrafta.<br>Możesz zakupić grę na stronie <a href=\"https://minecraft.net/\">Minecraft.net</a>"
                 },
                 "unknown": {
-                    "title": "Error During Login:<br>Unknown Error"
+                    "title": "Błąd przy połączeniu:<br>Nieznany."
                 }
             },
-            "login": "LOGIN",
-            "loggingIn": "LOGGING IN",
-            "success": "SUCCESS",
-            "tryAgain": "Try Again"
+            "login": "POŁĄCZENIE/NAZWA UŻYTKOWNIKA",
+            "loggingIn": "TRWA ŁĄCZENIE",
+            "success": "POŁĄCZONO",
+            "tryAgain": "Proszę spróbować ponownie"
         },
         "landing": {
             "launch": {
-                "pleaseWait": "Please wait.."
+                "pleaseWait": "Prosze czekać..."
             }
         }
     }

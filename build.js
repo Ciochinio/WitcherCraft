@@ -18,10 +18,10 @@ function getCurrentPlatform(){
 builder.build({
     targets: (process.argv[2] != null && Platform[process.argv[2]] != null ? Platform[process.argv[2]] : getCurrentPlatform()).createTarget(),
     config: {
-        appId: 'helioslauncher',
-        productName: 'Helios Launcher',
-        artifactName: '${productName}-setup-${version}.${ext}',
-        copyright: 'Copyright © 2018-2020 Daniel Scalzi',
+        appId: 'witchercraft',
+        productName: 'WitcherCraft',
+        artifactName: '${productName}-installer-.${ext}',
+        copyright: 'Copyright © 2017-2021 Ciochinio',
         directories: {
             buildResources: 'build',
             output: 'dist'
@@ -46,10 +46,10 @@ builder.build({
         },
         linux: {
             target: 'AppImage',
-            maintainer: 'Daniel Scalzi',
-            vendor: 'Daniel Scalzi',
-            synopsis: 'Modded Minecraft Launcher',
-            description: 'Custom launcher which allows users to join modded servers. All mods, configurations, and updates are handled automatically.',
+            maintainer: 'Ciochinio',
+            vendor: 'Ciochinio',
+            synopsis: 'Zmodyfikowany Launcher Miecraft',
+            description: 'Launcher pozwalający graczom dołączać do modowanych serwerów bez konieczności pobierania ręcznie jakichkolwiek plików.',
             category: 'Game'
         },
         compression: 'maximum',

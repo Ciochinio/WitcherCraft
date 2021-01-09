@@ -537,7 +537,7 @@ exports.pullRemote = function(){
         return exports.pullLocal()
     }
     return new Promise((resolve, reject) => {
-        const distroURL = 'https://witchercraft.xyz/serverfiles/distribution.json'
+        const distroURL = 'https://ciochinio.github.io/modfiles/distribution.json'
         //const distroURL = 'https://gist.githubusercontent.com/dscalzi/53b1ba7a11d26a5c353f9d5ae484b71b/raw/'
         //http://68.183.121.7/distribution.json
         //https://witchercraft.xyz/server/distribution.json

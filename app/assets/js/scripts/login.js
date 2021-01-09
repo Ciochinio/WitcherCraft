@@ -173,12 +173,12 @@ function resolveError(err){
         if(err.error != null){
             if(err.error === 'ForbiddenOperationException'){
                 if(err.errorMessage != null){
-                    if(err.errorMessage === 'Nieprawidłowe dane uwierzytelniania. Nieprawidłowa nazwa użytkownika lub hasło.'){
+                    if(err.errorMessage === 'Invalid credentials. Invalid username or password.'){
                         return {
                             title: Lang.queryJS('login.error.invalidCredentials.title'),
                             desc: Lang.queryJS('login.error.invalidCredentials.desc')
                         }
-                    } else if(err.errorMessage === 'Nieprawidłowe dane uwierzytelniania.'){
+                    } else if(err.errorMessage === 'Invalid credentials.'){
                         return {
                             title: Lang.queryJS('login.error.rateLimit.title'),
                             desc: Lang.queryJS('login.error.rateLimit.desc')

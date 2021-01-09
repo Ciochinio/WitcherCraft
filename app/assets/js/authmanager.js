@@ -46,7 +46,7 @@ exports.addAccount = async function(username, password){
 }
 
 /**
- * Remove an account. This will invalidate the access token associated
+ * Remove an account. This will ate the access token associated
  * with the account and then remove it from the database.
  * 
  * @param {string} uuid The UUID of the account to be removed.

@@ -649,7 +649,7 @@ function dlAsync(login = true){
 
             if(login && allGood) {
                 const authUser = ConfigManager.getSelectedAccount()
-                loggerLaunchSuite.log(`Sending selected account (${authUser.displayName}) to ProcessBuilder.`)
+                loggerLaunchSuite.log(`Wysyłanie wybranego konta (${authUser.displayName}) do programu budowania procesów.`)
                 let pb = new ProcessBuilder(serv, versionData, forgeData, authUser, remote.app.getVersion())
                 setLaunchDetails('Uruchamianie gry..')
 

@@ -688,7 +688,7 @@ function dlAsync(login = true){
                     if(SERVER_JOINED_REGEX.test(data)){
                         DiscordWrapper.updateDetails('POPOGA1!')
                     } else if(GAME_JOINED_REGEX.test(data)){
-                        DiscordWrapper.updateDetails('POPOGA2!')
+                        DiscordWrapper.updateDetails('Zabija Potwory!')
                     }
                 }
 
